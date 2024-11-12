@@ -19,7 +19,7 @@ struct MoviesView: View {
                     .navigationTitle("Now Playing")
             } else {
                 List(movies.indices, id: \.self) { index in
-                    NavigationLink(destination: Text("Details")) {
+                    NavigationLink(destination: MovieDetailsView(movieID: movies[index].id)) {
                         HStack(spacing: 20) {
                             AsyncImage(url: URL(string: "https://image.tmdb.org/t/p/w342\(movies[index].posterPath)")) { phase in
                                 switch phase {
